@@ -1,0 +1,206 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --base-text: #cfcfcf;
+  --dark-text: #545454;
+  --medium-color: #7d7d7d;
+  --dark-color: #252525;
+
+  color-scheme: light dark;
+  background-color: var(--dark-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- Layout menu styles --- */
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid var(--dark-text);
+
+  @media (max-width: 500px) {
+    justify-content: center;
+  }
+}
+
+.outline-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--base-text);
+  padding: 0.75rem 0.75rem;
+  border: 4px solid var(--base-text);
+  border-radius: 30px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.link-button-active {
+  background-color: var(--dark-text);
+}
+
+/* --- Image page styles --- */
+.image-container {
+  img {
+    border-radius: 1rem;
+    max-width: 100%;
+    height: auto;
+  }
+  figcaption {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--base-text);
+    padding-left: 0.5rem;
+  }
+}
+
+/* --- GPS page styles --- */
+
+.gps-card {
+  background: var(--base-text);
+  padding: 1rem 4rem 4rem;
+  border-radius: 1rem;
+  width: 40%;
+
+  @media (max-width: 500px) {
+    width: 50%;
+  }
+}
+
+.gps-card-header {
+  display: flex;
+  justify-content: center;
+  color: var(--dark-text);
+  font-weight: 300;
+}
+
+.gps-card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  color: var(--dark-text);
+}
+
+.large-screen-info-header {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.title-info {
+  border-bottom: 1px solid var(--medium-color);
+  text-align: center;
+  h5 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+/* --- Video page styles --- */
+.video-container {
+  position: relative;
+  width: min(900px, 100%);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-cover {
+  all: unset;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.video-cover:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.video-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-play-icon {
+  position: absolute;
+  height: 25%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.video-frame {
+  position: relative;
+  width: min(900px, 100%);
+  aspect-ratio: 16 /9;
+  border-radius: 0.5rem;
+  border: none;
+  z-index: 2;
+}
+
+.video-frame-background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: min(900px, 100%);
+  aspect-ratio: 16 /9;
+  border-radius: 0.5rem;
+  background-color: var(--dark-color);
+  z-index: 1;
+}
+
+.close-button {
+  position: absolute;
+  bottom: 10px;
+  transition: bottom 0.5s ease-in-out;
+}
+
+.animate-button-down {
+  bottom: -65px;
+}
+
+/* --- Utils styles --- */
+
+.postion-relative {
+  position: relative;
+}
+
+.padding-2 {
+  padding: 0.5rem;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: var(--base-text);
+    font-size: clamp(1.5rem, 2vw + 0.5rem, 3rem);
+  }
+}
+
+.box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
