@@ -28,3 +28,5 @@ export type GeoData = {
   };
   boundingbox: string[];
 };
+
+export type VideoClickHandlerTypes = 'open' | 'close';
