@@ -70,7 +70,7 @@
 /* --- GPS page styles --- */
 
 .gps-card {
-  background: var(--base-text);
+  background-color: var(--base-text);
   padding: 1rem 4rem 4rem;
   border-radius: 1rem;
   width: 40%;
@@ -172,7 +172,11 @@
 .close-button {
   position: absolute;
   bottom: 10px;
+  background-color: var(--dark-color);
   transition: bottom 0.5s ease-in-out;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .animate-button-down {

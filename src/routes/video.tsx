@@ -13,15 +13,20 @@ function RouteComponent() {
   const [playVideo, setPlayVideo] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
+  const timeoutId = useRef<number>(0);
+
   const onClickHandler = (type: 'open' | 'close') => {
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current);
+    }
+
     if (type === 'open') {
       setPlayVideo(true);
-      return;
     }
     if (type === 'close') {
       const buttonElement = buttonRef.current;
       buttonElement?.classList.remove('animate-button-down');
-      setTimeout(() => {
+      timeoutId.current = setTimeout(() => {
         setPlayVideo(false);
       }, 500);
     }
@@ -29,11 +34,17 @@ function RouteComponent() {
 
   useEffect(() => {
     if (playVideo) {
+      if (timeoutId.current) {
+        clearTimeout(timeoutId.current);
+      }
       const buttonElement = buttonRef.current;
-      setTimeout(() => {
+      timeoutId.current = setTimeout(() => {
         buttonElement?.classList.add('animate-button-down');
       }, 500);
     }
+    return () => {
+      clearTimeout(timeoutId.current);
+    };
   }, [playVideo]);
 
   return (
