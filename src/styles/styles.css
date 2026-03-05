@@ -129,6 +129,13 @@
 }
 
 /* --- Video page styles --- */
+
+.video-page-container {
+  @media (max-width: 500px) {
+    padding: 0 1rem;
+  }
+}
+
 .video-container {
   position: relative;
   width: min(900px, 100%);
@@ -201,10 +208,6 @@
 
 /* --- Utils styles --- */
 
-.postion-relative {
-  position: relative;
-}
-
 .padding-2 {
   padding: 0.5rem;
 }
@@ -218,10 +221,6 @@
   h1 {
     color: var(--base-text);
     font-size: clamp(1.5rem, 2vw + 0.5rem, 3rem);
-  }
-
-  @media (max-width: 500px) {
-    padding: 0px 1rem;
   }
 }
 

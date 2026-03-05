@@ -48,7 +48,7 @@ function RouteComponent() {
   }, [playVideo]);
 
   return (
-    <div className="page-container">
+    <div className="page-container video-page-container">
       <h1>Welcome to awsome Video!</h1>
       {!playVideo && <VideoPlayButton onClickHandler={onClickHandler} />}
       {playVideo && (
